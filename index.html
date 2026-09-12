@@ -1,0 +1,2468 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f3ec">
+    <meta name="description" content="給依柔的一封生日情書，記下我們的相遇、日常，還有未完待續的故事。">
+    <title>給依柔 — 每一個有妳的瞬間</title>
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%238a253c'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='42' fill='%23fff'%3Er%3C/text%3E%3C/svg%3E">
+    <style>
+        :root {
+            --paper: #f7f3ec;
+            --ink: #302d2b;
+            --red: #8a253c;
+            --muted: #7d726c;
+            --line: #d7ccc0;
+            --serif: "Songti TC", "Noto Serif TC", "PMingLiU", serif
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", sans-serif
+        }
+
+        body:after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 20;
+            opacity: .04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' filter='url(%23n)' opacity='.5' d='M0 0h180v180H0z'/%3E%3C/svg%3E")
+        }
+
+        a {
+            color: inherit
+        }
+
+        button {
+            font: inherit
+        }
+
+        a,
+        button {
+            -webkit-tap-highlight-color: transparent
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--red);
+            outline-offset: 6px
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        figure {
+            margin: 0
+        }
+
+        ::selection {
+            background: #e9c8cc
+        }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--red);
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: left;
+            z-index: 101
+        }
+
+        header {
+            position: absolute;
+            z-index: 30;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 94px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            border-bottom: 1px solid #bbae9c55
+        }
+
+        .brand {
+            text-decoration: none;
+            font-family: var(--serif);
+            font-size: 21px;
+            letter-spacing: .1em
+        }
+
+        .brand em {
+            font-family: Georgia, serif;
+            color: var(--red);
+            font-size: 28px;
+            margin-left: 10px
+        }
+
+        .header-note {
+            font-size: 12px;
+            letter-spacing: .2em;
+            color: var(--muted)
+        }
+
+        .header-end {
+            text-decoration: none;
+            font-size: 14px;
+            color: var(--red)
+        }
+
+        .hero {
+            min-height: 850px;
+            height: 100svh;
+            max-height: 1150px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 130px 20px 140px
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 4;
+            margin-top: -30px;
+            pointer-events: none
+        }
+
+        .eyebrow {
+            display: block;
+            font-size: 12px;
+            letter-spacing: .24em;
+            color: var(--muted);
+            font-weight: 500
+        }
+
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(44px, 5.8vw, 88px);
+            font-weight: 400;
+            line-height: 1.42;
+            letter-spacing: .03em;
+            margin: 27px 0 19px
+        }
+
+        .hero h1 em {
+            color: var(--red);
+            font-weight: 400;
+            font-style: normal
+        }
+
+        .hero-sub {
+            font-family: var(--serif);
+            font-size: 17px;
+            line-height: 2;
+            letter-spacing: .12em
+        }
+
+        .handwritten {
+            font-family: Georgia, var(--serif);
+            font-style: italic;
+            color: var(--red);
+            font-size: 28px;
+            transform: rotate(-8deg);
+            display: block;
+            margin: 23px 0
+        }
+
+        .hero-photo {
+            position: absolute;
+            padding: 9px 9px 35px;
+            background: #fffdf9;
+            box-shadow: 0 10px 30px #49302118;
+            width: clamp(140px, 17vw, 252px);
+            height: clamp(185px, 22vw, 325px);
+            transform: rotate(var(--rot));
+            z-index: 2;
+            will-change: translate
+        }
+
+        .hero-photo:after {
+            content: attr(data-caption);
+            font-family: var(--serif);
+            font-size: 12px;
+            letter-spacing: .1em;
+            position: absolute;
+            bottom: 11px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #6f635d
+        }
+
+        .hp1 {
+            left: 3%;
+            top: 19%;
+            --rot: -12deg
+        }
+
+        .hp2 {
+            right: 4%;
+            top: 17%;
+            --rot: 10deg
+        }
+
+        .hp3 {
+            left: 13%;
+            bottom: 8%;
+            --rot: 7deg;
+            width: clamp(115px, 13vw, 190px);
+            height: clamp(145px, 16vw, 235px)
+        }
+
+        .hp4 {
+            right: 12%;
+            bottom: 6%;
+            --rot: -8deg;
+            width: clamp(115px, 13vw, 190px);
+            height: clamp(145px, 16vw, 235px)
+        }
+
+        .hero-bottom {
+            position: absolute;
+            bottom: 35px;
+            left: 5%;
+            right: 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            z-index: 5
+        }
+
+        .hero-bottom small {
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: .15em;
+            text-align: left;
+            line-height: 1.8
+        }
+
+        .scroll-link {
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: .15em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 13px
+        }
+
+        .scroll-link span {
+            height: 42px;
+            width: 1px;
+            background: var(--red);
+            transform-origin: top;
+            animation: line 2.5s ease-in-out infinite
+        }
+
+        .hero-bottom .folio {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--muted)
+        }
+
+        @keyframes line {
+
+            0%,
+            100% {
+                transform: scaleY(.55)
+            }
+
+            50% {
+                transform: scaleY(1)
+            }
+        }
+
+        .intro {
+            padding: 130px 24px 140px;
+            text-align: center;
+            border-top: 1px solid var(--line);
+            position: relative
+        }
+
+        .intro .dear {
+            font-family: Georgia, var(--serif);
+            font-size: 31px;
+            font-style: italic;
+            color: var(--red);
+            margin-bottom: 40px
+        }
+
+        .intro p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: var(--serif);
+            font-size: 20px;
+            line-height: 2.3
+        }
+
+        .intro .tiny-heart {
+            display: block;
+            color: var(--red);
+            font-size: 20px;
+            margin-top: 45px
+        }
+
+        .chapter {
+            padding: 110px 7% 120px;
+            border-top: 1px solid var(--line)
+        }
+
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12%;
+            max-width: 1150px;
+            margin: auto
+        }
+
+        .photo-side {
+            position: relative
+        }
+
+        .sticky-photo {
+            position: sticky;
+            top: 90px;
+            padding-bottom: 30px
+        }
+
+        .sticky-photo>.eyebrow {
+            margin-bottom: 28px
+        }
+
+        .print {
+            background: #fffdfa;
+            padding: 12px 12px 17px;
+            box-shadow: 0 12px 35px #2f201212;
+            transform: rotate(-3deg)
+        }
+
+        .chapter:nth-of-type(even) .print {
+            transform: rotate(3deg)
+        }
+
+        .print img {
+            aspect-ratio: 4/5;
+            max-height: 550px
+        }
+
+        .print figcaption {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 19px 9px 5px;
+            font-family: var(--serif);
+            font-size: 15px
+        }
+
+        .print figcaption span {
+            font-family: Georgia, serif;
+            color: #958477;
+            font-style: italic
+        }
+
+        .side-note {
+            display: block;
+            text-align: center;
+            font-family: var(--serif);
+            font-size: 16px;
+            letter-spacing: .13em;
+            color: var(--red);
+            margin: 35px 0 0;
+            transform: rotate(-4deg)
+        }
+
+        .chapter-number {
+            font: italic 60px Georgia, serif;
+            color: #b59483;
+            display: block;
+            margin-bottom: 22px
+        }
+
+        .words h2 {
+            font-family: var(--serif);
+            font-size: clamp(30px, 3vw, 45px);
+            font-weight: 400;
+            line-height: 1.65;
+            letter-spacing: .06em;
+            margin: 0 0 45px
+        }
+
+        .words p {
+            font-size: 17px;
+            line-height: 2.25;
+            margin: 0 0 35px;
+            color: #615650;
+            text-align: justify
+        }
+
+        .interlude {
+            padding: 140px 25px;
+            text-align: center;
+            background: #ead9d2
+        }
+
+        .interlude .eyebrow {
+            color: #866659
+        }
+
+        .interlude h2 {
+            font: 400 clamp(30px, 4.6vw, 64px)/1.75 var(--serif);
+            letter-spacing: .09em;
+            color: var(--red);
+            margin: 35px auto
+        }
+
+        .interlude .small {
+            font: italic 18px Georgia, serif;
+            color: #986d6d
+        }
+
+        .night {
+            background: #202b34;
+            color: #eee9e2;
+            border-color: #202b34
+        }
+
+        .night .words p {
+            color: #c6cbd0
+        }
+
+        .night .eyebrow,
+        .night .chapter-number {
+            color: #a8b7c5
+        }
+
+        .night .side-note {
+            color: #d9b9b2
+        }
+
+        .night .print {
+            color: #382e29
+        }
+
+        .night .words h2 {
+            color: #faf0e3
+        }
+
+        .night-quote {
+            background: #202b34;
+            text-align: center;
+            padding: 45px 24px 140px;
+            color: #ede5db
+        }
+
+        .night-quote p {
+            font: 400 clamp(27px, 3.4vw, 46px)/1.95 var(--serif);
+            letter-spacing: .08em
+        }
+
+        .night-quote span {
+            display: block;
+            margin-top: 40px;
+            font-size: 13px;
+            letter-spacing: .2em;
+            color: #adb8c1
+        }
+
+        .fireworks {
+            position: relative;
+            min-height: 850px;
+            height: 110svh;
+            max-height: 1200px;
+            background: #111;
+            isolation: isolate;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 25px;
+            overflow: hidden
+        }
+
+        .fireworks>img {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            object-position: center 45%;
+            opacity: .8
+        }
+
+        .fireworks:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(#10121b33, #10121b55 40%, #10121bcd);
+            z-index: -1
+        }
+
+        .fireworks .eyebrow {
+            color: #eee0cc
+        }
+
+        .fireworks h2 {
+            font: 400 clamp(32px, 4.4vw, 65px)/1.8 var(--serif);
+            margin: 35px 0;
+            text-shadow: 0 2px 30px #000
+        }
+
+        .fireworks p {
+            font-size: 17px;
+            line-height: 2.1;
+            max-width: 580px;
+            margin: auto
+        }
+
+        .memories {
+            padding: 110px 0 90px;
+            overflow: hidden
+        }
+
+        .memories-top {
+            padding: 0 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px
+        }
+
+        .memories h2 {
+            font: 400 clamp(29px, 3.5vw, 48px)/1.7 var(--serif);
+            margin: 22px 0 0
+        }
+
+        .gallery-controls {
+            display: flex;
+            gap: 10px
+        }
+
+        .gallery-controls button {
+            width: 45px;
+            height: 45px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            background: none;
+            color: var(--red);
+            cursor: pointer;
+            font-size: 19px
+        }
+
+        .gallery-controls button:hover {
+            background: #ead9d2
+        }
+
+        .gallery {
+            display: flex;
+            gap: 30px;
+            overflow: auto;
+            scroll-snap-type: x mandatory;
+            padding: 65px 7% 40px;
+            scrollbar-width: thin;
+            scrollbar-color: #b8a392 transparent
+        }
+
+        .gallery figure {
+            flex: 0 0 280px;
+            scroll-snap-align: center;
+            background: #fffcf7;
+            padding: 10px 10px 24px;
+            transform: rotate(-3deg);
+            box-shadow: 0 6px 18px #46312815
+        }
+
+        .gallery figure:nth-child(even) {
+            transform: rotate(3deg)
+        }
+
+        .gallery img {
+            height: 320px
+        }
+
+        .gallery figcaption {
+            font-family: var(--serif);
+            font-size: 16px;
+            text-align: center;
+            padding-top: 23px
+        }
+
+        .little-story {
+            max-width: 640px;
+            margin: 70px auto 15px;
+            padding: 0 25px
+        }
+
+        .little-story p {
+            font-size: 17px;
+            line-height: 2.2;
+            color: #615650
+        }
+
+        .closing {
+            padding: 125px 25px 130px;
+            text-align: center;
+            background: #ead9d2
+        }
+
+        .closing>p {
+            max-width: 610px;
+            margin: 30px auto 50px;
+            font: 18px/2.3 var(--serif)
+        }
+
+        .closing h2 {
+            font: 400 clamp(38px, 5vw, 70px)/1.65 var(--serif);
+            color: var(--red);
+            margin: 25px 0
+        }
+
+        .letter-button {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            justify-content: space-between;
+            width: min(430px, 100%);
+            margin: 45px auto 0;
+            padding: 32px;
+            border: 1px solid #d1b7ae;
+            background: #f8f2e7;
+            box-shadow: 0 10px 28px #7c393517;
+            text-align: left;
+            color: var(--red);
+            transition: transform .3s, box-shadow .3s
+        }
+
+        .letter-button:hover {
+            transform: translateY(-5px) rotate(-1deg);
+            box-shadow: 0 18px 35px #7c393523
+        }
+
+        .letter-button span {
+            font: italic 23px/1.8 Georgia, var(--serif)
+        }
+
+        .letter-button small {
+            display: block;
+            font: 13px/2 -apple-system, sans-serif;
+            letter-spacing: .1em;
+            color: #8c7469
+        }
+
+        .seal {
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            width: 53px;
+            height: 53px;
+            background: var(--red);
+            border-radius: 50%;
+            color: #fff0e9;
+            font-size: 21px;
+            box-shadow: inset 0 0 0 4px #ffffff12
+        }
+
+        .birthday-letter {
+            max-width: 620px;
+            margin: 45px auto 0;
+            padding: 60px 35px;
+            background: #fffbf3;
+            box-shadow: 0 15px 45px #7c39351a;
+            position: relative
+        }
+
+        .birthday-letter[hidden] {
+            display: none
+        }
+
+        .birthday-letter h3 {
+            font: 400 37px/1.6 var(--serif);
+            color: var(--red);
+            margin: 0 0 30px
+        }
+
+        .birthday-letter p {
+            font: 18px/2.3 var(--serif)
+        }
+
+        .birthday-letter .signature {
+            font: italic 24px Georgia, serif;
+            color: var(--red);
+            margin-top: 35px
+        }
+
+        .confetti {
+            position: absolute;
+            pointer-events: none;
+            inset: 0;
+            overflow: hidden
+        }
+
+        .confetti i {
+            position: absolute;
+            top: -20px;
+            left: var(--x);
+            width: 6px;
+            height: 10px;
+            background: var(--c);
+            animation: fall 2.8s var(--delay) ease-out both
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-20px) rotate(0);
+                opacity: 1
+            }
+
+            to {
+                transform: translateY(650px) rotate(600deg);
+                opacity: 0
+            }
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 5%;
+            font-size: 12px;
+            letter-spacing: .12em;
+            color: var(--muted)
+        }
+
+        footer a {
+            text-decoration: none
+        }
+
+        .chapter-nav {
+            position: fixed;
+            right: 19px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            z-index: 50;
+            padding: 12px 7px;
+            background: #f7f3ece8;
+            border: 1px solid #d7ccc077;
+            border-radius: 25px
+        }
+
+        .chapter-nav a {
+            width: 20px;
+            height: 20px;
+            display: grid;
+            place-items: center
+        }
+
+        .chapter-nav a:after {
+            content: "";
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            background: #9d8e85;
+            transition: transform .3s, background .3s
+        }
+
+        .chapter-nav a[aria-current="true"]:after {
+            background: var(--red);
+            transform: scale(1.8)
+        }
+
+        .js .reveal {
+            opacity: 0;
+            translate: 0 25px;
+            transition: opacity .85s ease, translate .85s ease
+        }
+
+        .js .reveal.visible {
+            opacity: 1;
+            translate: 0 0
+        }
+
+        body:not(.js) .reveal {
+            opacity: 1
+        }
+
+        .hero-copy {
+            animation: enter 1.3s ease both
+        }
+
+        .hero-photo {
+            animation: enter 1.5s ease both
+        }
+
+        .hp2 {
+            animation-delay: .15s
+        }
+
+        .hp3 {
+            animation-delay: .3s
+        }
+
+        .hp4 {
+            animation-delay: .45s
+        }
+
+        @keyframes enter {
+            from {
+                opacity: 0;
+                translate: 0 24px
+            }
+
+            to {
+                opacity: 1;
+                translate: 0 0
+            }
+        }
+
+        @media(min-width:1550px) {
+            .hp1 {
+                left: 7%
+            }
+
+            .hp2 {
+                right: 7%
+            }
+
+            .hp3 {
+                left: 19%
+            }
+
+            .hp4 {
+                right: 19%
+            }
+        }
+
+        @media(max-width:850px) {
+            .hero {
+                min-height: 790px;
+                max-height: 980px
+            }
+
+            .hero h1 {
+                font-size: 54px
+            }
+
+            .hero-photo {
+                width: 155px;
+                height: 205px
+            }
+
+            .hp1 {
+                left: -45px;
+                top: 21%
+            }
+
+            .hp2 {
+                right: -45px;
+                top: 20%
+            }
+
+            .hp3 {
+                left: 8%;
+                bottom: 9%;
+                width: 125px;
+                height: 160px
+            }
+
+            .hp4 {
+                right: 8%;
+                bottom: 8%;
+                width: 125px;
+                height: 160px
+            }
+
+            .hero-copy {
+                margin-top: -45px
+            }
+
+            .header-note {
+                display: none
+            }
+
+            .chapter {
+                padding: 90px 7%
+            }
+
+            .chapter-grid {
+                gap: 8%
+            }
+
+            .chapter-nav {
+                right: 7px
+            }
+
+            .words p {
+                font-size: 16px
+            }
+
+            .print figcaption {
+                padding: 15px 0 0;
+                font-size: 13px
+            }
+
+            .side-note {
+                font-size: 14px
+            }
+        }
+
+        @media(max-width:600px) {
+            header {
+                height: 75px;
+                padding: 0 6%
+            }
+
+            .brand {
+                font-size: 18px
+            }
+
+            .brand em {
+                font-size: 24px
+            }
+
+            .header-end {
+                font-size: 13px
+            }
+
+            .hero {
+                height: 100svh;
+                min-height: 760px;
+                max-height: 960px;
+                padding-top: 95px
+            }
+
+            .hero-copy {
+                margin-top: -125px
+            }
+
+            .hero h1 {
+                font-size: 42px;
+                margin: 22px 0 18px;
+                line-height: 1.55
+            }
+
+            .hero .eyebrow {
+                font-size: 10px;
+                letter-spacing: .18em
+            }
+
+            .hero-sub {
+                font-size: 14px
+            }
+
+            .handwritten {
+                font-size: 23px;
+                margin-top: 20px
+            }
+
+            .hp1 {
+                width: 133px;
+                height: 177px;
+                left: 5%;
+                top: auto;
+                bottom: 113px;
+                --rot: -12deg;
+                z-index: 3
+            }
+
+            .hp2 {
+                width: 138px;
+                height: 184px;
+                right: 5%;
+                top: auto;
+                bottom: 107px;
+                --rot: 10deg;
+                z-index: 3
+            }
+
+            .hp3 {
+                width: 107px;
+                height: 141px;
+                left: 34%;
+                bottom: 126px;
+                --rot: -3deg;
+                z-index: 2
+            }
+
+            .hp4 {
+                display: none
+            }
+
+            .hero-photo {
+                padding: 6px 6px 25px
+            }
+
+            .hero-photo:after {
+                font-size: 10px;
+                bottom: 8px
+            }
+
+            .hero-bottom {
+                bottom: 25px;
+                left: 6%;
+                right: 6%
+            }
+
+            .hero-bottom small {
+                font-size: 10px
+            }
+
+            .hero-bottom .folio {
+                font-size: 12px
+            }
+
+            .scroll-link {
+                font-size: 11px;
+                gap: 9px
+            }
+
+            .scroll-link span {
+                height: 28px
+            }
+
+            .intro {
+                padding: 95px 28px
+            }
+
+            .intro p {
+                font-size: 18px;
+                line-height: 2.25
+            }
+
+            .intro .dear {
+                font-size: 27px
+            }
+
+            .chapter {
+                padding: 75px 28px 60px
+            }
+
+            .chapter-grid {
+                display: block
+            }
+
+            .sticky-photo {
+                position: relative;
+                top: 0;
+                max-width: 360px;
+                margin: auto;
+                padding: 0
+            }
+
+            .sticky-photo>.eyebrow {
+                margin-bottom: 25px
+            }
+
+            .print {
+                margin: 0 13px
+            }
+
+            .print img {
+                aspect-ratio: 4/4.4;
+                max-height: 430px
+            }
+
+            .side-note {
+                margin: 25px 0 50px
+            }
+
+            .words h2 {
+                font-size: 31px;
+                line-height: 1.6;
+                margin-bottom: 30px
+            }
+
+            .chapter-number {
+                font-size: 43px;
+                margin: 0 0 15px
+            }
+
+            .words p {
+                font-size: 16px;
+                line-height: 2.2;
+                margin-bottom: 30px
+            }
+
+            .chapter-nav {
+                display: none
+            }
+
+            .interlude {
+                padding: 85px 25px
+            }
+
+            .interlude h2 {
+                font-size: 30px;
+                letter-spacing: .04em
+            }
+
+            .night-quote {
+                padding: 10px 25px 95px
+            }
+
+            .night-quote p {
+                font-size: 25px
+            }
+
+            .fireworks {
+                height: 95svh;
+                min-height: 650px
+            }
+
+            .fireworks h2 {
+                font-size: 33px
+            }
+
+            .fireworks p {
+                font-size: 16px
+            }
+
+            .memories {
+                padding: 75px 0 60px
+            }
+
+            .memories-top {
+                padding: 0 28px
+            }
+
+            .memories h2 {
+                font-size: 29px
+            }
+
+            .gallery-controls button {
+                height: 36px;
+                width: 36px
+            }
+
+            .gallery {
+                gap: 22px;
+                padding-top: 45px
+            }
+
+            .gallery figure {
+                flex-basis: 240px
+            }
+
+            .gallery img {
+                height: 285px
+            }
+
+            .little-story {
+                margin-top: 45px;
+                padding: 0 28px
+            }
+
+            .little-story p {
+                font-size: 16px
+            }
+
+            .closing {
+                padding: 80px 25px
+            }
+
+            .closing h2 {
+                font-size: 40px
+            }
+
+            .closing>p {
+                font-size: 17px
+            }
+
+            .birthday-letter {
+                padding: 45px 24px
+            }
+
+            .birthday-letter h3 {
+                font-size: 30px
+            }
+
+            .birthday-letter p {
+                font-size: 17px
+            }
+
+            .letter-button {
+                padding: 25px
+            }
+
+            .letter-button span {
+                font-size: 21px
+            }
+
+            footer {
+                font-size: 10px;
+                gap: 15px
+            }
+
+            .eyebrow {
+                line-height: 1.8
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            *,
+            *:before,
+            *:after {
+                animation: none !important;
+                transition: none !important
+            }
+
+            .js .reveal {
+                opacity: 1;
+                translate: none
+            }
+
+            .hero-photo {
+                will-change: auto
+            }
+        }
+
+        /* 生日故事的密碼入口 */
+        #story[hidden],
+        #login-page[hidden] {
+            display: none !important;
+        }
+
+        .login-page {
+            min-height: 100svh;
+            display: grid;
+            place-items: center;
+            padding: 48px 24px;
+        }
+
+        .login-card {
+            width: min(100%, 430px);
+            text-align: center;
+        }
+
+        .login-card .seal {
+            margin: 0 auto 32px;
+            width: 62px;
+            height: 62px;
+        }
+
+        .login-card h1 {
+            font: 400 clamp(32px, 6vw, 44px)/1.65 var(--serif);
+            color: var(--red);
+            margin: 24px 0 18px;
+        }
+
+        .login-intro {
+            font: 17px/2 var(--serif);
+            color: var(--muted);
+            margin-bottom: 36px;
+        }
+
+        .login-card label {
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .login-card input {
+            width: 100%;
+            min-height: 58px;
+            border: 1px solid var(--line);
+            border-radius: 0;
+            background: #fffaf3;
+            color: var(--ink);
+            font: 22px/1.5 Georgia, serif;
+            letter-spacing: .3em;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .login-card input:focus-visible {
+            outline: 2px solid var(--red);
+            outline-offset: 3px;
+        }
+
+        .login-card input[aria-invalid="true"] {
+            border-color: var(--red);
+        }
+
+        .login-hint {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--muted);
+            text-align: left;
+            margin: 13px 0 0;
+        }
+
+        .login-error {
+            min-height: 27px;
+            margin: 9px 0;
+            font-size: 14px;
+            color: var(--red);
+            line-height: 1.9;
+        }
+
+        .login-submit {
+            width: 100%;
+            padding: 17px 24px;
+            cursor: pointer;
+            background: var(--red);
+            color: #fffaf3;
+            border: 1px solid var(--red);
+            font-size: 16px;
+            letter-spacing: .12em;
+            transition: background .2s;
+        }
+
+        .login-submit:hover {
+            background: #702035;
+        }
+
+        .login-signature {
+            display: block;
+            margin-top: 35px;
+            font: italic 20px Georgia, serif;
+            color: var(--red);
+        }
+
+        /* 06：照片與回憶一起展開；原始比例保留，點擊可看完整大圖。 */
+        .memory-diary {
+            max-width: 1160px;
+            padding: 0 36px;
+            margin: 85px auto 0;
+        }
+
+        .memory-entry {
+            padding: 60px 0 95px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .memory-entry+.memory-entry {
+            margin-top: 30px;
+        }
+
+        .memory-copy {
+            max-width: 630px;
+        }
+
+        .memory-copy h3 {
+            font: 400 clamp(27px, 3vw, 42px)/1.65 var(--serif);
+            margin: 20px 0 28px;
+            letter-spacing: .04em;
+        }
+
+        .memory-copy p {
+            font-size: 17px;
+            line-height: 2.2;
+            color: #615650;
+            margin: 0 0 22px;
+        }
+
+        .memory-photo {
+            min-width: 0;
+            padding: 9px 9px 0;
+            background: #fffcf7;
+            box-shadow: 0 9px 30px #49302113;
+            align-self: start;
+        }
+
+        .photo-open {
+            display: block;
+            position: relative;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            cursor: zoom-in;
+            background: transparent;
+        }
+
+        .memory-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .memory-photo figcaption {
+            font: 15px/1.8 var(--serif);
+            padding: 17px 7px 20px;
+            color: #67574e;
+        }
+
+        .photo-zoom {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #fffcf7e8;
+            color: var(--red);
+            transition: transform .25s;
+        }
+
+        .photo-open:hover .photo-zoom {
+            transform: scale(1.15);
+        }
+
+        .home-entry .memory-copy {
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .home-photos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: start;
+            padding: 12px;
+        }
+
+        .home-photos .memory-photo:nth-child(1) {
+            transform: rotate(-4deg);
+        }
+
+        .home-photos .memory-photo:nth-child(2) {
+            margin-top: 60px;
+            transform: rotate(3deg);
+        }
+
+        .home-photos .memory-photo:nth-child(3) {
+            transform: rotate(-2deg);
+        }
+
+        .train-entry {
+            display: grid;
+            grid-template-columns: .9fr 1fr;
+            align-items: center;
+            gap: 12%;
+        }
+
+        .train-entry>.memory-photo {
+            max-width: 400px;
+            transform: rotate(-3deg);
+            margin: 0 15px;
+        }
+
+        .aquarium-entry .memory-copy {
+            margin-bottom: 45px;
+        }
+
+        .aquarium-photos {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .aquarium-photos .memory-photo:last-child {
+            margin-top: 75px;
+            transform: rotate(3deg);
+        }
+
+        .kawagoe-entry {
+            display: grid;
+            grid-template-columns: 1fr 1.05fr;
+            gap: 8%;
+            align-items: start;
+        }
+
+        .kawagoe-entry .memory-copy {
+            position: sticky;
+            top: 100px;
+        }
+
+        .kawagoe-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .kawagoe-photos .station-photo {
+            grid-column: 1;
+            grid-row: 1;
+            transform: rotate(-4deg);
+        }
+
+        .kawagoe-photos .kumano-photo {
+            grid-column: 2;
+            grid-row: 1;
+            transform: rotate(3deg);
+        }
+
+        .kawagoe-photos .shrine-photo {
+            grid-column: 1 / -1;
+            margin-left: 35px;
+            transform: rotate(2deg);
+        }
+
+        .kawagoe-photos .paper-photo {
+            grid-column: 1 / -1;
+            width: 68%;
+            margin-left: 5%;
+            transform: rotate(-3deg);
+        }
+
+        .funny-entry .memory-copy {
+            text-align: center;
+            margin: 0 auto 50px;
+        }
+
+        .funny-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            max-width: 820px;
+            margin: auto;
+            align-items: center;
+        }
+
+        .funny-photos .memory-photo:first-child {
+            transform: rotate(-4deg);
+            margin-top: 45px;
+        }
+
+        .funny-photos .memory-photo:last-child {
+            transform: rotate(4deg);
+        }
+
+        .memory-film-heading {
+            max-width: 1160px;
+            padding: 40px 36px 0;
+            margin: 40px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .memory-afterword {
+            margin-top: 80px;
+        }
+
+        .chapter-photo-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 40px 0 65px;
+        }
+
+        .chapter-photo-pair .memory-photo:nth-child(2) {
+            margin-top: 35px;
+            transform: rotate(3deg);
+        }
+
+        .chapter-photo-pair .memory-photo figcaption {
+            font-size: 14px;
+            padding: 12px 2px 15px;
+        }
+
+        .photo-viewer {
+            padding: 64px 24px 24px;
+            border: 0;
+            background: #191b20;
+            color: #fffaf0;
+            max-width: 96vw;
+            width: min(1100px, 96vw);
+            max-height: 94svh;
+            overflow: auto;
+        }
+
+        .photo-viewer::backdrop {
+            background: #101218e8;
+        }
+
+        .photo-viewer img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 73svh;
+            object-fit: contain;
+        }
+
+        .photo-viewer p {
+            text-align: center;
+            font: 16px/1.8 var(--serif);
+            margin: 20px 0 0;
+        }
+
+        .photo-viewer-close {
+            position: absolute;
+            right: 18px;
+            top: 14px;
+            padding: 9px 15px;
+            background: transparent;
+            color: white;
+            border: 1px solid #ffffff66;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        @media(max-width: 700px) {
+            .memory-diary {
+                padding: 0 28px;
+                margin-top: 35px;
+            }
+
+            .memory-entry {
+                padding: 35px 0 60px;
+            }
+
+            .memory-copy p {
+                font-size: 16px;
+            }
+
+            .home-entry .memory-copy,
+            .funny-entry .memory-copy {
+                text-align: left;
+            }
+
+            .home-photos {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                padding: 5px;
+            }
+
+            .home-photos .memory-photo:nth-child(2) {
+                margin-top: 40px;
+            }
+
+            .home-photos .memory-photo:nth-child(3) {
+                grid-column: 1 / -1;
+                width: 66%;
+                justify-self: center;
+                margin-top: 15px;
+            }
+
+            .memory-photo figcaption {
+                font-size: 14px;
+                padding: 12px 3px 14px;
+            }
+
+            .train-entry,
+            .kawagoe-entry {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+            }
+
+            .train-entry .memory-copy {
+                order: -1;
+            }
+
+            .train-entry>.memory-photo {
+                width: 80%;
+                align-self: center;
+            }
+
+            .aquarium-photos {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .aquarium-photos .memory-photo:last-child {
+                width: 88%;
+                margin: 0 0 0 auto;
+            }
+
+            .kawagoe-entry .memory-copy {
+                position: static;
+            }
+
+            .kawagoe-photos {
+                width: 100%;
+            }
+
+            .funny-photos {
+                gap: 20px;
+                padding: 5px;
+            }
+
+            .funny-photos .memory-photo:first-child {
+                margin-top: 20px;
+            }
+
+            .memory-film-heading {
+                padding: 20px 28px 0;
+                margin-top: 25px;
+            }
+
+            .memory-film-heading .eyebrow {
+                font-size: 10px;
+                letter-spacing: .12em;
+            }
+
+            .chapter-photo-pair {
+                gap: 15px;
+            }
+
+            .photo-viewer {
+                padding: 58px 12px 18px;
+            }
+        }
+
+        .disney-opening {
+            display: grid;
+            grid-template-columns: 1fr 1.05fr;
+            gap: 8%;
+            align-items: center;
+            margin-bottom: 65px;
+        }
+
+        .disney-opening>.memory-photo {
+            transform: rotate(2deg);
+        }
+
+        .disney-moment {
+            margin: 65px 0 85px;
+        }
+
+        .disney-moment>.memory-copy {
+            margin: 0 auto 32px;
+        }
+
+        .disney-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 880px;
+            margin: auto;
+        }
+
+        .disney-pair>.memory-photo:first-child {
+            transform: rotate(-2deg);
+        }
+
+        .disney-pair>.memory-photo:last-child {
+            transform: rotate(2deg);
+            margin-top: 45px;
+        }
+
+        .disney-last-ride {
+            display: grid;
+            grid-template-columns: 1fr .8fr;
+            gap: 12%;
+            align-items: center;
+        }
+
+        .disney-last-ride>.memory-photo {
+            transform: rotate(-3deg);
+        }
+
+        .disney-ending {
+            margin: 75px auto 0;
+            padding: 35px 0 0;
+            border-top: 1px solid var(--line);
+            text-align: center;
+        }
+
+        .disney-ending p {
+            font-family: var(--serif);
+            font-size: 20px;
+            color: var(--red);
+        }
+
+        @media(max-width:700px) {
+
+            .disney-opening,
+            .disney-last-ride {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .disney-opening {
+                margin-bottom: 45px;
+            }
+
+            .disney-pair {
+                gap: 20px;
+            }
+
+            .disney-moment {
+                margin: 45px 0 55px;
+            }
+
+            .disney-last-ride>.memory-photo {
+                width: 78%;
+                justify-self: center;
+            }
+
+            .disney-ending {
+                margin-top: 50px;
+            }
+
+            .disney-ending p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <section class="login-page" id="login-page" aria-labelledby="login-title">
+        <div class="login-card">
+            <span class="seal" aria-hidden="true">♡</span>
+            <span class="eyebrow">ONLY FOR ROU</span>
+            <h1 id="login-title">有一封信，<br>只想給妳看。</h1>
+            <p class="login-intro">用屬於我們的那一天，<br>打開這個小小的世界。</p>
+            <form id="login-form">
+                <label for="story-password">輸入密碼</label>
+                <input id="story-password" type="password" inputmode="numeric" autocomplete="off" maxlength="8" required
+                    aria-describedby="login-hint login-error" placeholder="八位數日期">
+                <p class="login-hint" id="login-hint">密碼提示：我們在一起的第一天<br>格式：YYYYMMDD</p>
+                <p class="login-error" id="login-error" role="status" aria-live="polite"></p>
+                <button class="login-submit" type="submit">打開我們的故事 →</button>
+            </form>
+            <noscript>
+                <p>請開啟瀏覽器的 JavaScript，輸入密碼後閱讀這封信。</p>
+            </noscript>
+            <span class="login-signature">A little secret, just for you.</span>
+        </div>
+    </section>
+    <div id="story" hidden>
+
+        <div class="progress" aria-hidden="true"></div>
+        <header><a class="brand" href="#top">給依柔 <em>with love.</em></a><span class="header-note">A LITTLE STORY ABOUT
+                US</span><a class="header-end" href="#birthday">生日快樂 ↗</a></header>
+        <nav class="chapter-nav" aria-label="故事章節"><a href="#meeting" aria-label="第一章：相遇" title="相遇"></a><a
+                href="#together" aria-label="第二章：在一起" title="在一起"></a><a href="#japan" aria-label="第三章：日本"
+                title="日本"></a><a href="#distance" aria-label="第四章：想念" title="想念"></a><a href="#again"
+                aria-label="第五章：重逢" title="重逢"></a><a href="#birthday" aria-label="給妳的生日信" title="生日信"></a></nav>
+        <main>
+            <section class="hero">
+                <figure class="hero-photo hp1" data-caption="每一個有妳的瞬間"><img class="" src="assets/IMG_1519.jpg"
+                        alt="靠在一起親吻的我們" loading="eager" decoding="async"></figure>
+                <figure class="hero-photo hp2" data-caption="和妳一起，去哪都好"><img class="" src="assets/IMG_1660.jpg"
+                        alt="一起在迪士尼城堡前合照" loading="eager" decoding="async"></figure>
+                <figure class="hero-photo hp3" data-caption="想一直牽著妳"><img class="" src="assets/IMG_1567.jpg"
+                        alt="戴著戒指，牽在一起的手" loading="eager" decoding="async"></figure>
+                <figure class="hero-photo hp4" data-caption="最喜歡妳的樣子"><img class="" src="assets/IMG_7493.jpg"
+                        alt="我們一起出遊的自拍" loading="eager" decoding="async"></figure>
+                <div class="hero-copy"><span class="eyebrow">FOR ROU · OUR LITTLE STORY</span>
+                    <h1>原來，最好的巧合<br>是<em>妳。</em></h1>
+                    <p class="hero-sub">那些平常沒說出口的話，<br>今天，想慢慢說給妳聽。</p><span class="handwritten">Happy birthday, my
+                        love.</span>
+                </div>
+                <div class="hero-bottom"><small>寫給我最重要的妳<br>也寫給我們的每一天</small><a class="scroll-link"
+                        href="#letter-start">往下，聽我說<span></span></a><span class="folio">Our story, so far.</span></div>
+            </section>
+            <section class="intro" id="letter-start">
+                <div class="dear reveal">Dear 依柔,</div>
+                <p class="reveal">難得的生日，就讓我感性一點吧，我其實真的有很多話想對妳說，但平常找不到機會，還有正確的時機，因此我想用這次妳生日，把我內心的話都好好對妳說。</p><span
+                    class="tiny-heart reveal" aria-hidden="true">♡</span>
+            </section>
+            <section class="chapter " id="meeting" data-chapter="1">
+                <div class="chapter-grid">
+                    <div class="photo-side">
+                        <div class="sticky-photo"><span class="eyebrow">CHAPTER / 01</span>
+                            <figure class="print reveal"><img class="" src="assets/IMG_1516.jpg" alt="有些巧合，後來變成了我們"
+                                    loading="lazy" decoding="async">
+                                <figcaption>有些巧合，後來變成了我們<span>01</span></figcaption>
+                            </figure><span class="side-note">一切都好巧，好巧。</span>
+                        </div>
+                    </div>
+                    <div class="words"><span class="chapter-number reveal">01</span>
+                        <h2 class="reveal">如果那一天，<br>我們沒有遇見。</h2>
+                        <p class="reveal">
+                            有時候還是會回想起，和妳相遇的那一天....依然覺得好神奇。每次跟妳去麥頌，就會想要再次感受一下那一天。一切真的都好巧好巧....我真的沒想到當時覺得很漂亮的女生會成為我這麼重要的人。
+                        </p>
+                        <p class="reveal">如果當時的我早一點走，或是沒有去抽那隻煙...沒有在吸煙區飆髒話...是否一切都會變得和現在不一樣。</p>
+                        <p class="reveal">現在想起....依然覺得真的好神奇好神奇。</p>
+                        <p class="reveal">
+                            妳讓我有好感的第一印象就是，我無意間跟妳提到我在幫我朋友找化妝品，後來我們找不到，結果就在妳回去的時候妳在機場看到，於是就拍給我看。然後幫我買、幫我寄出去，當時的我就覺得這個女生好貼心好用心。
+                        </p>
+                        <p class="reveal">我們剛認識的當時，每天都聊到很晚很晚，其實當時的我有想說，妳是不是只是剛好無聊，我也不知道隔天的妳會不會再次跟我聊。</p>
+                    </div>
+                </div>
+            </section>
+            <section class="chapter " id="together" data-chapter="2">
+                <div class="chapter-grid">
+                    <div class="photo-side">
+                        <div class="sticky-photo"><span class="eyebrow">CHAPTER / 02</span>
+                            <figure class="print reveal"><img class="" src="/start.png" alt="兩個人，從這裡開始" loading="lazy"
+                                    decoding="async">
+                                <figcaption>兩個人，從這裡開始<span>02</span></figcaption>
+                            </figure><span class="side-note">那天之後，生日多了一個意義。</span>
+                        </div>
+                    </div>
+                    <div class="words"><span class="chapter-number reveal">02</span>
+                        <h2 class="reveal">錯過了末班車，<br>卻更靠近了妳。</h2>
+                        <p class="reveal">
+                            然後我們就這樣持續了一段時間，直到我回台灣我們再次見面，第一次跟妳單獨吃飯，我們吃養心茶樓，吃得很開心，然後我們吃得很飽很飽，去公園散散步...靠在一起聊聊天、抽抽煙，後來妳陪我回景安搭車...結果那末班車就在我面前走過去...超好笑但我其實一點也不覺得幹，因為又可以再跟妳相處一段時間。那一次在景安我第一次親妳，我們原本當下就要在一起了，但我想了想把這個美好的日子留給不久後的生日。這樣以後我的生日就是我們的紀念日。
+                        </p>
+                        <div class="chapter-photo-pair">
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/養心茶樓-png.jpg" aria-label="放大照片：第一次，單獨和妳吃飯。"><img
+                                        src="assets/養心茶樓-png.jpg" width="820" height="1100" alt="第一次，單獨和妳吃飯。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>第一次，單獨和妳吃飯。</figcaption>
+                            </figure>
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/公園牽手-png.jpg" aria-label="放大照片：吃飽後，一起去散步。"><img
+                                        src="assets/公園牽手-png.jpg" width="804" height="1076" alt="吃飽後，一起去散步。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>吃飽後，一起去散步。</figcaption>
+                            </figure>
+                        </div>
+                        <p class="reveal">後來妳還把這一段做成一段很好笑的影片...我直到現在還是會拿出來看一下。覺得很有趣！</p>
+                        <p class="reveal">
+                            再後來就是我生日的那一天！我們去買伴手禮、吃楊國福、逛了松煙，在ＭＴＶ裡面正式在一起。那一天真的好開心...除了可以跟妳一起過生日之外，妳答應跟我在一起了！妳還做了一張很可愛很可愛的卡片給我，還有送我我最喜歡的玩具總動員的東西，那些東西我是真的很想待在身邊，於是這一趟我把胸章跟ㄉㄜㄉㄜ也帶來了。2026年截至6/8號，那是我最開心的一天。我印象很深刻的是，妳傳訊息給我說謝謝你的出現，我同樣的想再次想跟妳說.....
+                        </p>
+                        <div class="chapter-photo-pair">
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/生日吃楊國福-png.jpg" aria-label="放大照片：生日這天，和妳一起。"><img
+                                        src="assets/生日吃楊國福-png.jpg" width="830" height="1114" alt="生日這天，和妳一起。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>生日這天，和妳一起。</figcaption>
+                            </figure>
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/玩具寵動員生日禮物-png.jpg" aria-label="放大照片：妳準備的心意，我一直帶著。"><img
+                                        src="assets/玩具寵動員生日禮物-png.jpg" width="784" height="1054" alt="妳準備的心意，我一直帶著。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>妳準備的心意，我一直帶著。</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="interlude"><span class="eyebrow reveal">THE BEST PART OF THAT DAY</span>
+                <h2 class="reveal">李依柔，<br>也謝謝妳的出現。</h2><span class="small reveal">So glad it was you.</span>
+            </section>
+            <section class="chapter " id="japan" data-chapter="3">
+                <div class="chapter-grid">
+                    <div class="photo-side">
+                        <div class="sticky-photo"><span class="eyebrow">CHAPTER / 03</span>
+                            <figure class="print reveal"><img class="" src="assets/第一趟日本.jpg" alt="我們的第一趟日本"
+                                    loading="lazy" decoding="async">
+                                <figcaption>第一次，和妳一起來日本。<span>03</span></figcaption>
+                            </figure><span class="side-note">我們的第一趟日本。</span>
+                        </div>
+                    </div>
+                    <div class="words"><span class="chapter-number reveal">03</span>
+                        <h2 class="reveal">把妳的名字，<br>戴在我的手上。</h2>
+                        <p class="reveal">
+                            過沒兩天妳就跟我一起回來日本了！出發前妳說妳很緊張，我每次都給妳一樣的反應，咩驚啦...驚三小...但其實我內心是超級期待跟興奮哈哈哈哈！因為我們可以好好過我們的二人世界，可以一直黏在一起！
+                        </p>
+                        <p class="reveal">剛來的時候很好笑，我們還一直在豬八哥面前玩躲貓貓，一下要拉手一下又不敢拉，又怕被看到，很像什麼中學生偷偷談戀愛。</p>
+                        <p class="reveal">這一趟時間很短...但我們也去了很多地方，但就是因為時間太短吧...跟妳一起玩的同時我都在想妳回去之後該怎麼辦，我會很想妳，而我也怕妳會想我。</p>
+                        <p class="reveal">
+                            即便如此，我們還是一起去唱歌、迪士尼、去涉谷吃漢堡、買比奇堡居民一人兩隻，我們都開到了自己喜歡的！還有錄影存證！開盲盒開中真的就是爽！我們就這麼掛著叮咚叮咚的去了好多地方、還去涉谷訂製了戒指...這個戒指我真的很喜歡，除了戴起來好看之外再來就是上面印了妳的名字Rou....
+                            就像是一直把妳待在身邊的感覺。</p>
+                        <figure class="memory-photo reveal" style="max-width: 380px; margin: 35px auto 45px;"><button
+                                type="button" class="photo-open" data-photo="assets/涉谷吃漢堡.jpg"
+                                aria-label="放大照片：一起在涉谷吃漢堡。"><img src="assets/涉谷吃漢堡.jpg" width="780" height="1028"
+                                    alt="一起在涉谷吃漢堡。" loading="lazy" decoding="async"><span class="photo-zoom"
+                                    aria-hidden="true">↗</span></button>
+                            <figcaption>一起在涉谷吃漢堡。</figcaption>
+                        </figure>
+                        <div class="chapter-photo-pair">
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/一人兩隻比奇堡居明.jpg" aria-label="放大照片：一人兩隻，都開到喜歡的！"><img
+                                        src="assets/一人兩隻比奇堡居明.jpg" width="1477" height="1108" alt="一人兩隻，都開到喜歡的！"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>一人兩隻，都開到喜歡的！</figcaption>
+                            </figure>
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/涉谷訂製的戒指.jpg" aria-label="放大照片：Rou，把妳的名字戴在手上。"><img
+                                        src="assets/涉谷訂製的戒指.jpg" width="1108" height="1477" alt="Rou，把妳的名字戴在手上。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>Rou，把妳的名字戴在手上。</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="chapter night" id="distance" data-chapter="4">
+                <div class="chapter-grid">
+                    <div class="photo-side">
+                        <div class="sticky-photo"><span class="eyebrow">CHAPTER / 04</span>
+                            <figure class="print reveal"><img class="" src="assets/IMG_1529.jpg" alt="下一次，也要這樣牽著妳"
+                                    loading="lazy" decoding="async">
+                                <figcaption>下一次，也要這樣牽著妳<span>04</span></figcaption>
+                            </figure><span class="side-note">東京 / 台灣，想念沒有時差。</span>
+                        </div>
+                    </div>
+                    <div class="words"><span class="chapter-number reveal">04</span>
+                        <h2 class="reveal">等妳的身影消失，<br>我才捨得走。</h2>
+                        <p class="reveal">
+                            去完迪士尼的隔天...一大早還沒睡飽妳就要回台灣了...而且更讓人心疼的是妳回去之後還要工作，做這那份，會讓妳身心靈都不太愉快的工作...當時送別妳的時候，我真的很難過...看到妳哭了之後其實我真的也是很想哭...但我要忍住！因為我怕我哭了之後妳會更容易哭....
+                            我每次送別妳的時候都想要看到妳身影消失之後我才走...因為我怕妳回頭看不到我...</p>
+                        <p class="reveal">就這樣妳消失在我眼前，而按照原定計劃，我們下一次見面可能要兩個月後了...妳一走之後...直到我去了日暮里的吸煙區點了一隻煙空虛馬上湧上來了。</p>
+                        <p class="reveal">
+                            妳回去之後，我們持續了一段時間的遠距離，也遇到了所有遠距離的情侶都會遇到的問題...相處模式以及對愛情之間的認知，那段時間其實我內心很煎熬我相信妳應該也感受得到...除了妳工作不太順利受到了很多很多的委屈。後來就是發生了那件事情...妳提了離職，我能感受到妳難過...而我也對妳說無論怎麼樣，我一定都會站在妳這邊。
+                        </p>
+                        <p class="reveal">在妳提出離職之後，我希望我能在妳身邊，而妳也有說妳剛好有在想要不要過來找我，（其實當時的我已經在看回台灣的機票），而我希望可以好好陪陪妳。</p>
+                    </div>
+                </div>
+            </section>
+            <section class="night-quote">
+                <p class="reveal">「因為我怕妳回頭，<br>看不到我。」</p><span class="reveal">無論怎麼樣，我一定都會站在妳這邊。</span>
+            </section>
+            <section class="chapter " id="again" data-chapter="5">
+                <div class="chapter-grid">
+                    <div class="photo-side">
+                        <div class="sticky-photo"><span class="eyebrow">CHAPTER / 05</span>
+                            <figure class="print reveal"><img class="" src="assets/IMG_2705.JPG" alt="這次，我們有好多個明天"
+                                    loading="lazy" decoding="async">
+                                <figcaption>這次，我們有好多個明天<span>05</span></figcaption>
+                            </figure><span class="side-note">再次在日暮里見到妳。</span>
+                        </div>
+                    </div>
+                    <div class="words"><span class="chapter-number reveal">05</span>
+                        <h2 class="reveal">後來，<br>妳又回到我身邊。</h2>
+                        <p class="reveal">於是商討之後，妳也做出了決定，妳要來找我了！我當時其實真的很開心....事隔了一個多月我們再次在日暮里相見了!</p>
+                        <!-- <p class="reveal">
+                        隔天我們和寶子還有豬八哥出去吃飯，吃心心念念的樂樂屋！一開始寶子還沒來的時候，妳還像以前一樣，和我還有豬八哥在那邊打嘴炮，然後寶子一來之後，妳瞬間變得很安靜，直接馬上變I人。因為在我眼裡妳總是活潑又可愛的，妳以前跟我說妳是I人我都不太相信哈哈哈哈，就連豬八哥一道抽煙地點馬上跟我說欸我終於知道為什麼李依柔是Ｉ人了。
+                    </p> -->
+                        <p class="reveal">這一次待得時間很長，足足有三周以上我們可以一起完成清單上的事情，這三周我們做了超級多事情。</p>
+                    </div>
+                </div>
+            </section>
+            <section class="fireworks"><img class="" src="assets/IMG_4783.jpg" alt="我們一起看過的夜空與花火" loading="lazy"
+                    decoding="async">
+                <div><span class="eyebrow reveal">A WISH, COME TRUE</span>
+                    <h2 class="reveal">人生清單裡的花火，<br>終於，是和妳一起。</h2>
+                    <p class="reveal">我們去看了花火，其實在我人生清單內，一直都有一件事情，就是和自己喜歡的人看花火。</p>
+                </div>
+            </section>
+            <section class="memories" id="everyday" data-chapter="6">
+                <div class="memories-top">
+                    <div><span class="eyebrow reveal">06 / THE LITTLE THINGS</span>
+                        <h2 class="reveal">最喜歡的，是我們的日常。</h2>
+                    </div>
+                </div>
+                <div class="memory-diary">
+                    <article class="memory-entry home-entry">
+                        <div class="memory-copy"><span class="eyebrow reveal">AT HOME</span>
+                            <h3 class="reveal">原來，一起生活是這個樣子。</h3>
+                            <p class="reveal">我們做了好多以前我們在電話中提過的事情，而我也常常告訴妳只要寫上清單願往就會實現，果不其然我們真的一起在日本生活了！</p>
+                            <p class="reveal">我做飯，妳洗碗，在練馬房間傳訊息給對方，在冰箱放滿滿的妳愛吃到薄荷巧克力。</p>
+                            <p class="reveal">吃了Ｎ便還是一樣好吃的張亮麻辣燙！</p>
+                        </div>
+                        <div class="home-photos">
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/認真洗碗的依柔.jpg" aria-label="放大照片：我做飯，妳洗碗。"><img
+                                        src="assets/認真洗碗的依柔.jpg" width="1050" height="1800" alt="我做飯，妳洗碗。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>我做飯，妳洗碗。</figcaption>
+                            </figure>
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/練馬房間傳訊息給對方.jpg" aria-label="放大照片：明明在同一個房間，還是想傳訊息給妳。"><img
+                                        src="assets/練馬房間傳訊息給對方.jpg" width="960" height="1706" alt="明明在同一個房間，還是想傳訊息給妳。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>明明在同一個房間，還是想傳訊息給妳。</figcaption>
+                            </figure>
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/張量麻辣燙男友視角(可愛).jpg" aria-label="放大照片：吃了好多遍，還是一樣喜歡。"><img
+                                        src="assets/張量麻辣燙男友視角(可愛).jpg" width="1350" height="1800" alt="吃了好多遍，還是一樣喜歡。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>吃了好多遍，還是一樣喜歡。</figcaption>
+                            </figure>
+                        </div>
+                    </article>
+                    <article class="memory-entry train-entry">
+                        <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                data-photo="assets/電車日常.jpg" aria-label="放大照片：電車上的我們。"><img src="assets/電車日常.jpg"
+                                    width="1350" height="1800" alt="電車上的我們。" loading="lazy" decoding="async"><span
+                                    class="photo-zoom" aria-hidden="true">↗</span></button>
+                            <figcaption>電車上的我們。</figcaption>
+                        </figure>
+                        <div class="memory-copy"><span class="eyebrow reveal">ON OUR WAY</span>
+                            <h3 class="reveal">只要身邊是妳，<br>路上也是回憶。</h3>
+                            <p class="reveal">我們也搭了電車一起去很多地方。</p>
+                        </div>
+                    </article>
+                    <article class="memory-entry disney-entry" id="disney-again">
+                        <div class="disney-opening">
+                            <div class="memory-copy"><span class="eyebrow reveal">DISNEY, ONCE AGAIN</span>
+                                <h3 class="reveal">再來一次迪士尼，<br>這次不用說再見。</h3>
+                                <p class="reveal">再次二刷迪士尼！</p>
+                            </div>
+                            <figure class="memory-photo reveal"><button type="button" class="photo-open"
+                                    data-photo="assets/第二趟迪士尼.jpg" aria-label="放大照片：又和妳一起，回到這裡。"><img
+                                        src="assets/第二趟迪士尼.jpg" width="1800" height="1350" alt="又和妳一起，回到這裡。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>又和妳一起，回到這裡。</figcaption>
+                            </figure>
+                        </div>
+                        <div class="disney-moment">
+                            <div class="memory-copy">
+                                <p class="reveal">迪士尼那天人很多太陽很熱，排隊還到一半的樂佩還被取消，後來轉戰彼得潘！彼得判結束後 速排樂佩！</p>
+                            </div>
+                            <div class="disney-pair">
+                                <figure class="memory-photo reveal"><button type="button" class="photo-open"
+                                        data-photo="assets/轉戰彼得潘.jpg" aria-label="放大照片：轉戰彼得潘！"><img
+                                            src="assets/轉戰彼得潘.jpg" width="1350" height="1800" alt="轉戰彼得潘！"
+                                            loading="lazy" decoding="async"><span class="photo-zoom"
+                                            aria-hidden="true">↗</span></button>
+                                    <figcaption>轉戰彼得潘！</figcaption>
+                                </figure>
+                                <figure class="memory-photo reveal"><button type="button" class="photo-open"
+                                        data-photo="assets/樂佩.jpg" aria-label="放大照片：終於，輪到樂佩。"><img src="assets/樂佩.jpg"
+                                            width="1448" height="1086" alt="終於，輪到樂佩。" loading="lazy"
+                                            decoding="async"><span class="photo-zoom"
+                                            aria-hidden="true">↗</span></button>
+                                    <figcaption>終於，輪到樂佩。</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="disney-moment">
+                            <div class="memory-copy">
+                                <p class="reveal">還有讓我們排到懷疑人生的艾沙 妳說小美人那個噴水的最好玩還不用排 超好笑！</p>
+                            </div>
+                            <div class="disney-pair">
+                                <figure class="memory-photo reveal"><button type="button" class="photo-open"
+                                        data-photo="assets/排到懷疑人生的艾沙JPG.jpg" aria-label="放大照片：排到懷疑人生的艾沙。"><img
+                                            src="assets/排到懷疑人生的艾沙JPG.jpg" width="1800" height="1350" alt="排到懷疑人生的艾沙。"
+                                            loading="lazy" decoding="async"><span class="photo-zoom"
+                                            aria-hidden="true">↗</span></button>
+                                    <figcaption>排到懷疑人生的艾沙。</figcaption>
+                                </figure>
+                                <figure class="memory-photo reveal"><button type="button" class="photo-open"
+                                        data-photo="assets/迪士尼最好玩還不用排.jpg" aria-label="放大照片：最好玩的，竟然不用排！"><img
+                                            src="assets/迪士尼最好玩還不用排.jpg" width="1170" height="1752" alt="最好玩的，竟然不用排！"
+                                            loading="lazy" decoding="async"><span class="photo-zoom"
+                                            aria-hidden="true">↗</span></button>
+                                    <figcaption>最好玩的，竟然不用排！</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="disney-last-ride">
+                            <div class="memory-copy">
+                                <p class="reveal">還有即將關閉的逗趣船 至少讓我們搭到了 妳還噴了一身濕 還有一張紀念卡</p>
+                            </div>
+                            <figure class="memory-photo reveal"><button type="button" class="photo-open"
+                                    data-photo="assets/迪士尼逗趣船記念卡.jpg" aria-label="放大照片：一張紀念卡，留住這一天。"><img
+                                        src="assets/迪士尼逗趣船記念卡.jpg" width="1350" height="1800" alt="一張紀念卡，留住這一天。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>一張紀念卡，留住這一天。</figcaption>
+                            </figure>
+                        </div>
+                        <div class="disney-ending memory-copy">
+                            <p class="reveal">上次迪士尼結束後我就確定還是會跟妳來，也真的跟妳來我很開心。而且這次隔天我們不用分離還可以繼續待在一起。</p>
+                        </div>
+                    </article>
+                    <article class="memory-entry aquarium-entry">
+                        <div class="memory-copy"><span class="eyebrow reveal">SUNSHINE AQUARIUM</span>
+                            <h3 class="reveal">一起走進，藍色的小世界。</h3>
+                            <p class="reveal">
+                                今天原本是要去川越的，超好笑，早上8:00鬧鐘響起來後，依柔說要再睡15分鐘，結果猜怎麼著，直接變150分鐘，加上我也有點累，於是就跟著一起睡了，於是我們就近選了太陽城水族館。
+                            </p>
+                            <p class="reveal">我們在水母前面拍了很多很好看的照片，後來我PO出來後還被誤以為是日本人原因是為... 哈哈哈哈</p>
+
+                            <p class="reveal">雖然在水族館看章魚哥的時候遇到中國沒水準屁眼怪，但是妳學狐獴還有花園鰻跟企鵝的時候很可愛也很有趣。</p>
+                            <p class="reveal">有一個OS就是我覺得妳今天特別美，妳看到這裡可以幫面問我是哪一張照片我可以拿給妳看</p>
+
+                        </div>
+                        <div class="aquarium-photos">
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/太陽城水族館.jpg" aria-label="放大照片：水裡有好多魚，身邊有妳。"><img
+                                        src="assets/太陽城水族館.jpg" width="1800" height="1350" alt="水裡有好多魚，身邊有妳。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>水裡有好多水母，身邊有妳。</figcaption>
+                            </figure>
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/太陽城水族館-png.jpg" aria-label="放大照片：又收藏了一張我們。"><img
+                                        src="assets/太陽城水族館-png.jpg" width="1448" height="1086" alt="又收藏了一張我們。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>又收藏了一張我們。</figcaption>
+                            </figure>
+                        </div>
+                    </article>
+                    <article class="memory-entry kawagoe-entry">
+                        <div class="memory-copy"><span class="eyebrow reveal">A DAY IN KAWAGOE</span>
+                            <h3 class="reveal">把願望，留在川越。</h3>
+                            <p class="reveal">我們一起去了川越，在熊野神社那個水晶球的抽籤！我還給GPT解籤</p>
+                            <p>他說<br>
+                                你選「神恩感謝」：
+
+                                心おごらず謙虚に処することが肝要である。
+                                「順遂之時不要自滿，保持謙虛。」
+
+                                依柔選「開運」：
+
+                                正しい心、人に尽くす心を失わない限り望みは達せられる。
+                                「保持正直與為他人付出的心，願望終會實現。」</p>
+                            <p>如果和再一起看就是：
+                                「感謝現在所擁有的，真誠對待身邊的人；不因幸福而自滿，也不因付出而失去善意，如此好運自然會延續。」</p>
+                            <p> 所以我很確定！我們會越來越好!</p>
+                              <p class="reveal">一起洗錢！一起跑茅の輪！而且我們在這裡都到的籤都很不錯！希望我們之後都可以賺很多的錢一起過上好日子！</p>
+                            <p class="reveal">在川越冰川神社的時候，我們一起釣魚魚、地瓜。然後再吹小紙人的時候，我不小心把蔡宜臻這個名字講出來超好笑...</p>
+                            <p class="reveal">第一次來穿越！真的好玩途中我們還一直學多米多羅靠北蔡阿嘎很好笑，上一秒還在評價食物，下一秒直接說我真的受不了！我不想再用這些阿嘎食物來填肚子了，還有阿嘎旅遊書裡的大黑棒！搜集了很多御守、拍了很多照片看了很多風鈴，很開心</p>
+
+
+                        </div>
+                        <div class="kawagoe-photos">
+                            <figure class="memory-photo reveal station-photo"><button type="button" class="photo-open"
+                                    data-photo="assets/川越.jpg" aria-label="放大照片：下一站，川越。"><img src="assets/川越.jpg"
+                                        width="1350" height="1800" alt="下一站，川越。" loading="lazy" decoding="async"><span
+                                        class="photo-zoom" aria-hidden="true">↗</span></button>
+                                <figcaption>下一站，川越。</figcaption>
+                            </figure>
+                            <figure class="memory-photo reveal kumano-photo"><button type="button" class="photo-open"
+                                    data-photo="assets/熊野神社.jpg" aria-label="放大照片：熊野神社。"><img src="assets/熊野神社.jpg"
+                                        width="1800" height="1350" alt="熊野神社。" loading="lazy" decoding="async"><span
+                                        class="photo-zoom" aria-hidden="true">↗</span></button>
+                                <figcaption>熊野神社。</figcaption>
+                            </figure>
+                            <figure class="memory-photo reveal shrine-photo"><button type="button" class="photo-open"
+                                    data-photo="assets/熊野神社洗錢.jpg" aria-label="放大照片：一起洗錢，一起許願。"><img
+                                        src="assets/熊野神社洗錢.jpg" width="1800" height="1350" alt="一起洗錢，一起許願。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>一起洗錢，一起許願。</figcaption>
+                            </figure>
+                            <figure class="memory-photo reveal paper-photo"><button type="button" class="photo-open"
+                                    data-photo="assets/冰川神社吹小紙人.jpg" aria-label="放大照片：吹小紙人的時候，還有那個小插曲。"><img
+                                        src="assets/冰川神社吹小紙人.jpg" width="1032" height="1800" alt="吹小紙人的時候，還有那個小插曲。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>吹小紙人的時候，還有那個小插曲。</figcaption>
+                            </figure>
+                        </div>
+                    </article>
+                    <article class="memory-entry funny-entry">
+                        <div class="memory-copy"><span class="eyebrow reveal">EXPECT THE UNEXPECTED</span>
+                            <h3 class="reveal">上一秒很認真，<br>下一秒，翼龍出現。</h3>
+                            <p class="reveal">我最喜歡的就是妳很常讓我有意想不到的反應...</p>
+                            <p class="reveal">在冰川神社旁邊的風鈴，每一張都很認真拍，結果畫風一轉，突然給我翼龍，我真的是快笑死，總是給我出其不意的反應。</p>
+                        </div>
+                        <figure class="memory-photo reveal" style="max-width: 540px; margin: 0 auto 55px;"><button type="button" class="photo-open"
+                                    data-photo="assets/冰川神社風鈴.jpg" aria-label="放大照片：看風鈴。"><img
+                                        src="assets/冰川神社風鈴.jpg" width="1800" height="1350" alt="看風鈴。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>一起看冰川神社的風鈴。</figcaption>
+                            </figure>
+                        <div class="funny-photos">
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/上一秒認真拍照.jpg" aria-label="放大照片：上一秒：認真拍照。"><img
+                                        src="assets/上一秒認真拍照.jpg" width="1350" height="1800" alt="上一秒：認真拍照。"
+                                        loading="lazy" decoding="async"><span class="photo-zoom"
+                                        aria-hidden="true">↗</span></button>
+                                <figcaption>上一秒：認真拍照。</figcaption>
+                            </figure>
+                            <figure class="memory-photo reveal "><button type="button" class="photo-open"
+                                    data-photo="assets/翼龍表情.jpg" aria-label="放大照片：下一秒：翼龍登場！"><img src="assets/翼龍表情.jpg"
+                                        width="1350" height="1800" alt="下一秒：翼龍登場！" loading="lazy" decoding="async"><span
+                                        class="photo-zoom" aria-hidden="true">↗</span></button>
+                                <figcaption>下一秒：翼龍登場！</figcaption>
+                            </figure>
+                        </div>
+                    </article>
+                </div>
+                <div class="memory-film-heading"><span class="eyebrow">AND ALL THESE LITTLE MOMENTS</span>
+                    <div class="gallery-controls"><button type="button" id="prev" aria-label="看前面的照片">←</button><button
+                            type="button" id="next" aria-label="看後面的照片">→</button></div>
+                </div>
+                <div class="gallery" id="gallery" tabindex="0" role="region" aria-label="我們的日常照片，可以左右滑動">
+                    <figure><img class="" src="assets/IMG_4760.jpg" alt="一起吃飯，就是很開心。" loading="lazy" decoding="async">
+                        <figcaption>一起吃飯，就是很開心。</figcaption>
+                    </figure>
+                    <figure><img class="" src="assets/IMG_1670.jpg" alt="一起當小朋友。" loading="lazy" decoding="async">
+                        <figcaption>一起當小朋友。</figcaption>
+                    </figure>
+                    <figure><img class="" src="assets/IMG_6682.jpg" alt="把好運，掛在身邊。" loading="lazy" decoding="async">
+                        <figcaption>把好運，掛在身邊。</figcaption>
+                    </figure>
+                    <figure><img class="" src="assets/IMG_6820.jpg" alt="川越的那一天。" loading="lazy" decoding="async">
+                        <figcaption>川越的那一天。</figcaption>
+                    </figure>
+                    <figure><img class="" src="assets/IMG_6087.jpg" alt="水族館，還有身邊的妳。" loading="lazy" decoding="async">
+                        <figcaption>水族館，還有身邊的妳。</figcaption>
+                    </figure>
+                    <figure><img class="" src="assets/IMG_7417.jpg" alt="台場的夜晚。" loading="lazy" decoding="async">
+                        <figcaption>台場的夜晚。</figcaption>
+                    </figure>
+                    <figure><img class="" src="assets/IMG_2829.jpg" alt="一人一隻，剛剛好。" loading="lazy" decoding="async">
+                        <figcaption>一人一隻，剛剛好。</figcaption>
+                    </figure>
+                    <figure><img class="" src="assets/IMG_6043.jpg" alt="妳總是有好多可愛的表情。" loading="lazy" decoding="async">
+                        <figcaption>妳總是有好多可愛的表情。</figcaption>
+                    </figure>
+                    <figure><img class="" src="assets/IMG_4008.jpg" alt="好多地方，都想和妳一起。" loading="lazy" decoding="async">
+                        <figcaption>好多地方，都想和妳一起。</figcaption>
+                    </figure>
+                </div>
+                <div class="little-story memory-afterword">
+                    <p class="reveal">
+                        還有一天早上起來，印象中是去玩水族館的隔天吧，我先把pizza丟下去微波，然後我在洗手台洗東西，一轉過身，我看到妳在對微波爐轉，我問妳...妳在幹嘛，妳說學pizza轉，它看起來好香好好吃...
+                    </p>
+                    <p class="reveal">
+                        我們回台灣的那天，我在清理洗手槽，然後妳經過冰箱的時候，就默默打開門，我一開始想說妳要拿什麼冰箱也沒什麼東西了，結果妳竟然是在跟冰箱裡的東西道別，我當下真的快笑死。
+                    </p>
+                    <p class="reveal">
+                        與妳生活在一起的很多時候都讓我覺得妳很有趣又很可愛，很想一直跟妳生活在一起。
+                    </p>
+                    <p class="reveal">
+                        每天的日常都讓我感覺很幸福也很開心，雖然我們也有地方不一樣、也會有爭吵的時候，但我想讓妳知道…
+                    </p>
+                </div>
+            </section>
+            <section class="closing" id="birthday"><span class="eyebrow reveal">TO BE CONTINUED, WITH YOU</span>
+                <p class="reveal">無論到了什麼時候，我其實一直都會記著與妳的點點滴滴....雖然我平常就是很少去表達內心的感受，但是其實這些話也真的憋在我心裡很久很久...我想趁這這次機會跟妳說</p>
+                <h2 class="reveal">李依柔，<br>我愛妳。</h2>
+                <!-- <p class="reveal">妳常常問我，不知道我喜歡妳哪一點。<br>我想，答案就在我們的每一天裡。</p> -->
+                <button type="button" class="letter-button reveal" id="open-letter" aria-expanded="false"
+                    aria-controls="birthday-letter"><span>To my dearest
+                        Rou<small>有一句話，留到最後才說。</small></span><b class="seal" aria-hidden="true">♡</b></button>
+                <div class="birthday-letter" id="birthday-letter" hidden>
+                    <div class="confetti" aria-hidden="true"></div><span class="eyebrow">JUST FOR YOU</span>
+                    <h3>依柔，生日快樂。</h3>
+                    <p>妳常常問我，<br>妳不知道我喜歡妳哪一點。<br>我想，我已經在這篇文章裡給出答案了。答案就在我們的每一天裡
+                        <!DOCTYPE html>
+                        <html lang="en">
+
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Document</title>
+                        </head>
+
+                        <body>
+
+                        </body>
+
+                        </html>
+                    </p>
+                    <p>我想讓妳知道，<br>無論怎麼樣，<br>我心裡一直都有妳的位置。</p>
+                    <div class="signature">Always, with love.</div>
+                </div><noscript>
+                    <div class="birthday-letter">
+                        <h3>依柔，生日快樂。</h3>
+                        <p>無論怎麼樣，我心裡一直都有妳的位置。</p>
+                    </div>
+                </noscript>
+            </section>
+        </main>
+        <footer><span>給依柔 · 我們的故事，未完待續。</span><a href="#top">再看一次 ↑</a></footer>
+    </div>
+
+    <dialog class="photo-viewer" id="photo-viewer" aria-label="照片大圖" aria-describedby="photo-viewer-caption">
+        <button type="button" class="photo-viewer-close" autofocus>關閉 ×</button>
+        <img id="photo-viewer-image" alt="">
+        <p id="photo-viewer-caption"></p>
+    </dialog>
+    <script>
+        // 純前端日期比對；重新整理頁面後需再次輸入。
+        const loginForm = document.getElementById('login-form');
+        const passwordInput = document.getElementById('story-password');
+        const loginError = document.getElementById('login-error');
+        passwordInput.addEventListener('input', () => {
+            passwordInput.removeAttribute('aria-invalid');
+            loginError.textContent = '';
+        });
+        loginForm.addEventListener('submit', event => {
+            event.preventDefault();
+            if (passwordInput.value !== '20260608') {
+                loginError.textContent = '還差一點點，再想想我們的那一天 ♡';
+                passwordInput.setAttribute('aria-invalid', 'true');
+                passwordInput.focus();
+                passwordInput.select();
+                return;
+            }
+            document.getElementById('login-page').hidden = true;
+            document.getElementById('story').hidden = false;
+            passwordInput.value = '';
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+            const title = document.querySelector('.hero h1');
+            title.setAttribute('tabindex', '-1');
+            title.focus({ preventScroll: true });
+            onScroll();
+        });
+
+        // 改文字：直接搜尋頁面內的句子。改照片：替換對應的 assets 路徑。
+        // 故事原稿保留於 index.md；這份預覽不需要網路或任何套件。
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if ('IntersectionObserver' in window) {
+            document.body.classList.add('js');
+            const reveal = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); reveal.unobserve(e.target) } }), { threshold: 0, rootMargin: '0px 0px -35px 0px' });
+            document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
+            const nav = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { document.querySelectorAll('.chapter-nav a').forEach(a => a.setAttribute('aria-current', String(a.hash === '#' + e.target.id))) } }), { rootMargin: '-20% 0px -55% 0px' });
+            document.querySelectorAll('[data-chapter],#birthday').forEach(el => nav.observe(el));
+        }
+        const progress = document.querySelector('.progress'); let scheduled = false;
+        function onScroll() { if (scheduled) return; scheduled = true; requestAnimationFrame(() => { const total = document.documentElement.scrollHeight - innerHeight; progress.style.transform = `scaleX(${total > 0 ? scrollY / total : 0})`; if (!reduced.matches && scrollY < innerHeight * 1.5) { document.querySelectorAll('.hero-photo').forEach((el, i) => el.style.translate = `0 ${scrollY * (i % 2 ? -.045 : .07)}px`) } scheduled = false }) }
+        addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll); onScroll();
+        const gallery = document.getElementById('gallery');
+        function moveGallery(direction) { const step = gallery.querySelector('figure').getBoundingClientRect().width + parseFloat(getComputedStyle(gallery).gap); gallery.scrollBy({ left: direction * step, behavior: reduced.matches ? 'instant' : 'smooth' }) }
+        document.getElementById('prev').addEventListener('click', () => moveGallery(-1)); document.getElementById('next').addEventListener('click', () => moveGallery(1));
+        gallery.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); moveGallery(e.key === 'ArrowRight' ? 1 : -1) } });
+        const openLetter = document.getElementById('open-letter'); const letter = document.getElementById('birthday-letter');
+        openLetter.addEventListener('click', () => { const opening = letter.hidden; letter.hidden = !opening; openLetter.setAttribute('aria-expanded', String(opening)); openLetter.querySelector('small').textContent = opening ? '把這封信收好 ♡' : '有一句話，留到最後才說。'; const confetti = letter.querySelector('.confetti'); confetti.replaceChildren(); if (opening) { if (!reduced.matches) { for (let i = 0; i < 32; i++) { const part = document.createElement('i'); part.style.setProperty('--x', `${Math.random() * 100}%`); part.style.setProperty('--delay', `${Math.random() * .5}s`); part.style.setProperty('--c', ['#8a253c', '#c79c62', '#c88a91', '#e0c7a0'][i % 4]); confetti.appendChild(part) } } requestAnimationFrame(() => letter.scrollIntoView({ behavior: reduced.matches ? 'instant' : 'smooth', block: 'center' })); } onScroll() });
+
+        // 新增照片共用大圖檢視：可用關閉按鈕、背景或 Esc 返回故事。
+        const photoViewer = document.getElementById('photo-viewer');
+        const viewerImage = document.getElementById('photo-viewer-image');
+        const viewerCaption = document.getElementById('photo-viewer-caption');
+        let photoTrigger = null;
+        let photoOverflow = '';
+        document.querySelectorAll('.photo-open').forEach(button => {
+            button.addEventListener('click', () => {
+                photoTrigger = button;
+                viewerImage.src = button.dataset.photo;
+                viewerImage.alt = button.querySelector('img').alt;
+                viewerCaption.textContent = button.closest('figure').querySelector('figcaption').textContent;
+                photoOverflow = document.body.style.overflow;
+                document.body.style.overflow = 'hidden';
+                photoViewer.showModal();
+            });
+        });
+        photoViewer.querySelector('.photo-viewer-close').addEventListener('click', () => photoViewer.close());
+        photoViewer.addEventListener('click', event => {
+            const box = photoViewer.getBoundingClientRect();
+            if (event.target === photoViewer && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) photoViewer.close();
+        });
+        photoViewer.addEventListener('close', () => {
+            document.body.style.overflow = photoOverflow;
+            if (photoTrigger) photoTrigger.focus({ preventScroll: true });
+        });
+    </script>
+</body>
+
+</html>
