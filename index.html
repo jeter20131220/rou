@@ -561,10 +561,21 @@
 
         .gallery-controls {
             display: flex;
+            flex: 0 0 auto;
+            align-items: center;
             gap: 10px
         }
 
         .gallery-controls button {
+            -webkit-appearance: none;
+            appearance: none;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            line-height: 1;
             width: 45px;
             height: 45px;
             border: 1px solid var(--line);
@@ -573,6 +584,13 @@
             color: var(--red);
             cursor: pointer;
             font-size: 19px
+        }
+
+        .gallery-controls button svg {
+            display: block;
+            width: 18px;
+            height: 18px;
+            pointer-events: none;
         }
 
         .gallery-controls button:hover {
@@ -1911,7 +1929,7 @@
                 <div class="chapter-grid">
                     <div class="photo-side">
                         <div class="sticky-photo"><span class="eyebrow">CHAPTER / 02</span>
-                            <figure class="print reveal"><img class="" src="/start.png" alt="兩個人，從這裡開始" loading="lazy"
+                            <figure class="print reveal"><img class="" src="assets/start.png" alt="兩個人，從這裡開始" loading="lazy"
                                     decoding="async">
                                 <figcaption>兩個人，從這裡開始<span>02</span></figcaption>
                             </figure><span class="side-note">那天之後，生日多了一個意義。</span>
@@ -2194,7 +2212,7 @@
                             <p class="reveal">我們在水母前面拍了很多很好看的照片，後來我PO出來後還被誤以為是日本人原因是為... 哈哈哈哈</p>
 
                             <p class="reveal">雖然在水族館看章魚哥的時候遇到中國沒水準屁眼怪，但是妳學狐獴還有花園鰻跟企鵝的時候很可愛也很有趣。</p>
-                            <p class="reveal">有一個OS就是我覺得妳今天特別美，妳看到這裡可以幫面問我是哪一張照片我可以拿給妳看</p>
+                            <p class="reveal">有一個OS就是我覺得妳今天特別美，(妳看到這裡可以當面問我是哪一張照片我可以拿給妳看)</p>
 
                         </div>
                         <div class="aquarium-photos">
@@ -2297,8 +2315,8 @@
                     </article>
                 </div>
                 <div class="memory-film-heading"><span class="eyebrow">AND ALL THESE LITTLE MOMENTS</span>
-                    <div class="gallery-controls"><button type="button" id="prev" aria-label="看前面的照片">←</button><button
-                            type="button" id="next" aria-label="看後面的照片">→</button></div>
+                    <div class="gallery-controls"><button type="button" id="prev" aria-label="看前面的照片"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button><button
+                            type="button" id="next" aria-label="看後面的照片"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
                 </div>
                 <div class="gallery" id="gallery" tabindex="0" role="region" aria-label="我們的日常照片，可以左右滑動">
                     <figure><img class="" src="assets/IMG_4760.jpg" alt="一起吃飯，就是很開心。" loading="lazy" decoding="async">
@@ -2313,8 +2331,8 @@
                     <figure><img class="" src="assets/IMG_6820.jpg" alt="川越的那一天。" loading="lazy" decoding="async">
                         <figcaption>川越的那一天。</figcaption>
                     </figure>
-                    <figure><img class="" src="assets/IMG_6087.jpg" alt="水族館，還有身邊的妳。" loading="lazy" decoding="async">
-                        <figcaption>水族館，還有身邊的妳。</figcaption>
+                    <figure><img class="" src="assets/IMG_4761.jpg" alt="一起做飯好吃的火雞麵" loading="lazy" decoding="async">
+                        <figcaption>一起做飯好吃的火雞麵</figcaption>
                     </figure>
                     <figure><img class="" src="assets/IMG_7417.jpg" alt="台場的夜晚。" loading="lazy" decoding="async">
                         <figcaption>台場的夜晚。</figcaption>
@@ -2354,7 +2372,7 @@
                 <div class="birthday-letter" id="birthday-letter" hidden>
                     <div class="confetti" aria-hidden="true"></div><span class="eyebrow">JUST FOR YOU</span>
                     <h3>依柔，生日快樂。</h3>
-                    <p>妳常常問我，<br>妳不知道我喜歡妳哪一點。<br>我想，我已經在這篇文章裡給出答案了。答案就在我們的每一天裡
+                    <p>妳常常問我，<br>妳不知道我喜歡妳哪一點。<br>我想，我已經在這篇文章裡給出答案了。答案就在我們的每一天裡。
                         <!DOCTYPE html>
                         <html lang="en">
 
